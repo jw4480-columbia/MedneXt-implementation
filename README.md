@@ -7,4 +7,13 @@ Reference listed below:
 MedNeXt: Transformer-driven Scaling of ConvNets for Medical Image Segmentation. 
 International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2023.
 
+> Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). 
+nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
+
+## General Usage
+To install the github repo and implement MedneXt as a regular nnUNet training pipeline, follow instruction and search for tutorial respectively:
+
+> https://github.com/MIC-DKFZ/MedNeXt
+
+
 
