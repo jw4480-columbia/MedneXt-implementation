@@ -1,2 +1,10 @@
 # MedneXt-implementation
 Private usage and customized data processing scripts based on MedneXt, and extension of nnUNet
+
+Reference listed below:
+
+> Roy, S., Koehler, G., Ulrich, C., Baumgartner, M., Petersen, J., Isensee, F., Jaeger, P.F. & Maier-Hein, K. (2023).
+MedNeXt: Transformer-driven Scaling of ConvNets for Medical Image Segmentation. 
+International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2023.
+
+
