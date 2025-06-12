@@ -23,9 +23,9 @@ If, like in this project, MedneXt need to be trained under a raw 2D database in,
 We invoke the prepocessing python script for task120:
 >https://github.com/MIC-DKFZ/MedNeXt/blob/main/nnunet_mednext/dataset_conversion/Task120_Massachusetts_RoadSegm.py
 
-which is design for 2d prepocessing and easy to rewrite.
+which is designed for 2d prepocessing and easy to rewrite.
 
-First, save a new copy and rename after task name, which should be in format `TaskXXX_Taskname.py` and put it in folder `/nnunet_mednext/dataset_conversion``, then rewrite python codes below:
+First, save a new copy and rename after task name, which should be in format `TaskXXX_Taskname.py` and put it in folder `/nnunet_mednext/dataset_conversion`, then rewrite python codes below:
 
 ```
 base = 'path/to/your/dataset/'
