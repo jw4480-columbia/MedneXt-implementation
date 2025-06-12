@@ -89,7 +89,7 @@ To train all 5 folds with cross validation you need to train the network for 5 t
 
 If not then just run `mednextv1_predict` and do your own postprocessing. A warning will be printed out but it should be fine.
 
-This github repo contains some practical python scripts which allows transformation among png, nifti, png binary and png grayscale, along with a visualization of comparison between prediction and ground truth, with white background, black overlap, red false negative and blue false positive.
+This github repo contains some practical python scripts which allows transformation among png, nifti, png binary and png grayscale, along with a visualization of comparison between prediction and ground truth, with white background, black overlap, red false negative and blue false positive. Additionally, basic data processing such as generating labels from json files, and renaming files in batches are also included.
 
 
 
