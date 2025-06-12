@@ -53,7 +53,8 @@ Your_dataset_name/
         ├── label_XXX+1.png
         ├── ...
         └── label_XXX.png
-        '''
+        
+'''
 Of course it can be named otherwise, but the namespace in the script should also be the same.
 
 Finally double check if the mask files in yout database is binary or grayscale, if in grayscale, then the script should be ready to run, if your mask file is already in binary scale, then comment out the following codes:
