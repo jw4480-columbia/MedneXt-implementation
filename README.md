@@ -18,9 +18,8 @@ To install the github repo and implement MedneXt as a regular nnUNet training pi
 Notice that MedneXt is design to work on 3D database only, therefore the original nnUNet repo is also strongly recommanded to be installed, as some precedure might require nnUNet command instead of MedneXt command, the 2 repositories should be installed parallel to each other and in the same environment, if any.
 
 ## Practical procedure of preparing a 2D database for training
-If, like in this project, MedneXt need to be trained under a raw 2D database in, suppose png format, then 2 basic data prepocessing is required:
+If, like in this project, MedneXt need to be trained under a raw 2D database in, suppose png format, then both custom and basic data prepocessing is required.
 
-### Pack data in a given format
 We invoke the prepocessing python script for task120:
 >https://github.com/MIC-DKFZ/MedNeXt/blob/main/nnunet_mednext/dataset_conversion/Task120_Massachusetts_RoadSegm.py
 which is design for 2d prepocessing and easy to rewrite.
@@ -73,7 +72,23 @@ Finally double check if the mask files in yout database is binary or grayscale, 
                                   transform=lambda x: (x == 255).astype(int))
 ```
 
+When ready run the python script and there should be a prepared dataset with the nnUNet format in the database, you don't need to do anything other than invoke the `mednextv1_plan_and_preprocess` command and get the dataset prepared for usage in training.
 
+##Training
+
+There is nothing new to state when it comes to training MedneXt, everything you need is already written in the original MedneXt and nnUNet github repo, but generally to train a network you should prepare your own network, even if you don't need to change anything yet. A new trainer should declare a new class, preferable inherited from `nnUNetTrainerV2.py` and place under `nnunet_mednext/training/network_training`, if you which to change any parameter for training, just redeclare in your own class.
+
+##Postprocessing
+
+Postprocessing might be to some degree confusing, but there is one thing to remember:
+
+**nnUNet is equipped with a strong and efficient postprocessing pipeline, but only work with cross-validation, which infers that you have to train all 5 folds independently, otherwise you need to do postprocessing on your own.**
+
+To train all 5 folds with cross validation you need to train the network for 5 times, traversing from fold 0 to 4. Then run `mednextv1_determine_postprocessing` before prediction.
+
+If not then just run `mednextv1_predict` and do your own postprocessing. A warning will be printed out but it should be fine.
+
+This github repo contains some practical python scripts which allows transformation among png, nifti, png binary and png grayscale, along with a visualization of comparison between prediction and ground truth, with white background, black overlap, red false negative and blue false positive.
 
 
 
