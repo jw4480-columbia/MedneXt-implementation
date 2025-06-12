@@ -74,11 +74,11 @@ Finally double check if the mask files in yout database is binary or grayscale, 
 
 When ready run the python script and there should be a prepared dataset with the nnUNet format in the database, you don't need to do anything other than invoke the `mednextv1_plan_and_preprocess` command and get the dataset prepared for usage in training.
 
-##Training
+## Training
 
 There is nothing new to state when it comes to training MedneXt, everything you need is already written in the original MedneXt and nnUNet github repo, but generally to train a network you should prepare your own network, even if you don't need to change anything yet. A new trainer should declare a new class, preferable inherited from `nnUNetTrainerV2.py` and place under `nnunet_mednext/training/network_training`, if you which to change any parameter for training, just redeclare in your own class.
 
-##Postprocessing
+## Postprocessing
 
 Postprocessing might be to some degree confusing, but there is one thing to remember:
 
